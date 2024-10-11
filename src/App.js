@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -64,32 +65,34 @@ const App = () => {
               {themeSettings && (<ThemeSettings />)}
 
               <Routes>
-                {/* dashboard  */}
-                <Route path="/" element={(<Ecommerce />)} />
-                <Route path="/ecommerce" element={(<Ecommerce />)} />
+  {/* dashboard */}
+  <Route path="/" element={<Navigate to="/ecommerce" />} />
+  <Route path="/ecommerce" element={<Ecommerce />} />
 
-                {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+  {/* pages */}
+  <Route path="/orders" element={<Orders />} />
+  <Route path="/employees" element={<Employees />} />
+  <Route path="/customers" element={<Customers />} />
 
-                {/* apps  */}
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editor" element={<Editor />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/color-picker" element={<ColorPicker />} />
+  {/* apps */}
+  <Route path="/kanban" element={<Kanban />} />
+  <Route path="/editor" element={<Editor />} />
+  <Route path="/calendar" element={<Calendar />} />
+  <Route path="/color-picker" element={<ColorPicker />} />
 
-                {/* charts  */}
-                <Route path="/line" element={<Line />} />
-                <Route path="/area" element={<Area />} />
-                <Route path="/bar" element={<Bar />} />
-                <Route path="/pie" element={<Pie />} />
-                <Route path="/financial" element={<Financial />} />
-                <Route path="/color-mapping" element={<ColorMapping />} />
-                <Route path="/pyramid" element={<Pyramid />} />
-                <Route path="/stacked" element={<Stacked />} />
+  {/* charts */}
+  <Route path="/line" element={<Line />} />
+  <Route path="/area" element={<Area />} />
+  <Route path="/bar" element={<Bar />} />
+  <Route path="/pie" element={<Pie />} />
+  <Route path="/financial" element={<Financial />} />
+  <Route path="/color-mapping" element={<ColorMapping />} />
+  <Route path="/pyramid" element={<Pyramid />} />
+  <Route path="/stacked" element={<Stacked />} />
+  <Route path='*' element={<Ecommerce />} />
 
-              </Routes>
+</Routes>
+
             </div>
             <Footer />
           </div>
